@@ -3,8 +3,9 @@
 
 let capture;
 let tracker;
-let w = 1280/2,
-    h = 720/2;
+let rate = 2;
+let w = 1280/rate,
+    h = 720/rate;
 
 function setup()
 {
@@ -20,7 +21,7 @@ function setup()
     });
   
     capture.elt.setAttribute('playsinline', '');
-    createCanvas(w*2, h*2);
+    createCanvas(w*rate, h*rate);
     capture.size(w, h);
     capture.hide();
 
@@ -36,6 +37,7 @@ function draw()
     image(capture, 0, 0, width, height );
     let positions = tracker.getCurrentPosition();
 
+    scale( rate );
     noFill();
     stroke(255);
     beginShape();
