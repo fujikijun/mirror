@@ -3,8 +3,8 @@
 
 let capture;
 let tracker;
-let w = 1280,
-    h = 720;
+let w = 1280/2,
+    h = 720/2;
 
 function setup()
 {
@@ -20,7 +20,7 @@ function setup()
     });
   
     capture.elt.setAttribute('playsinline', '');
-    createCanvas(w, h);
+    createCanvas(w*2, h*2);
     capture.size(w, h);
     capture.hide();
 
